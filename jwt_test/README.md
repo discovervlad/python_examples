@@ -12,3 +12,9 @@ Prepare:
 4. Request JWT token
    curl --cacert cert.pem -H "Content-Type: application/json" --data @login.json https://127.0.0.1:5000/login
 5. Add authorization header with bearer token to the new request and hit https://127.0.0.1:5000/protected
+
+Notes:
+This is a very simplistic example:
+1. Of course, normally I we would not store username+password cleartext in a json file.
+2. Normally, I would Add assymetric key pair instead of secret-key, so that JWT is encrypted with private key and decrypted with public. Even better,
+   we should use KMS for key management.
